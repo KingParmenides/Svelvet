@@ -11,13 +11,7 @@
 	let animationFrameId: number;
 
 	function moveEdge(edgeElement: SVGElement) {
-		const parentNode = edgeElement.parentNode;
-		if (!parentNode) return;
-		// Remove the anchor from its current container
-		parentNode.removeChild(edgeElement);
-
-		// Add the anchor to the new container
-		const newContainer = document.querySelector(`.svelvet-graph-wrapper`);
+		const newContainer = edgeElement.closest('.svelvet-graph-wrapper');
 		if (!newContainer) return;
 		newContainer.appendChild(edgeElement);
 	}
